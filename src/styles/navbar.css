@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: 'BIZ UDPGothic', sans-serif;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+.logo {
+  font-family: 'Fahkwang', sans-serif;
+  font-weight: 300;
+}
+.links-container {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.link {
+  margin: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color: gray;
+}
