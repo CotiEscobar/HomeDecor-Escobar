@@ -1,10 +1,16 @@
 //import logo from './logo.svg';
 //import './App.css';
-import NavBar from './components/NavBar.jsx';
+import Header from './components/Header.jsx';
+import ItemListContainer from './components/ItemListContainer.jsx';
 
 function App() {
   return (
-    <NavBar></NavBar>
+    <>
+    <Header />
+    <ItemListContainer 
+    greeting='Bienvenidos a mi tienda!'
+    />
+    </>
   );
 }
 

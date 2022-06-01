@@ -1,0 +1,9 @@
+.main-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.greeting {
+    font-weight: 300;
+}

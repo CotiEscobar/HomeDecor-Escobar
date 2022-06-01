@@ -11,10 +11,6 @@ html {
   justify-content: space-between;
   margin: 20px;
 }
-.logo {
-  font-family: 'Fahkwang', sans-serif;
-  font-weight: 300;
-}
 .links-container {
   display: flex;
   justify-content: center;

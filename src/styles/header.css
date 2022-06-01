@@ -1,0 +1,12 @@
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px grey;
+}
+.logo {
+  font-family: 'Fahkwang', sans-serif;
+  font-weight: 300;
+  margin: 10px;
+}

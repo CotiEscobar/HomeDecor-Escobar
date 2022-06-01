@@ -1,0 +1,7 @@
+.material-symbols-outlined {
+    margin-left: 50px;
+}
+.material-symbols-outlined:hover {
+    color: gray;
+    cursor: pointer;
+}
