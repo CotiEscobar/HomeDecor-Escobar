@@ -1,8 +1,9 @@
 import CartWidget from './CartWidget';
 import '../styles/navbar.css';
 
-const NavBar = () => {
-  return (
+const NavBar = (props) => {
+  console.log(props);
+  return ( 
     <nav className='navbar-container'>
       <li className='links-container'>
         <a href="" className='link'>SHOP</a>
@@ -11,7 +12,7 @@ const NavBar = () => {
         <CartWidget />
       </li>
     </nav>
-  );
+  )
 }
 
 export default NavBar;

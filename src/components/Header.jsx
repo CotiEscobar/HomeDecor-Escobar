@@ -1,11 +1,13 @@
-import NavBar from "./NavBar";
+import NavBar from './NavBar';
 import '../styles/header.css';
 
 const Header = () => {
     return (
         <header className="header-container">
             <h1 className='logo'>HOME.CE</h1>
-            <NavBar />
+            <NavBar 
+            inHeader={true}
+            links={["link1","link2","link3"]}/>
         </header>
     )
 }

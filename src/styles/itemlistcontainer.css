@@ -1,9 +1,50 @@
 .main-container {
     margin-top: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .greeting {
     font-weight: 300;
+}
+/* ItemCount styles */
+.btn-count-container {
+    margin-top: 100px;
+    width: 250px;
+}
+.btn-count {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.count-text {
+    font-size: 12px;
+}
+.btn {
+    font-size: 15px;
+    color: coral;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+.btn:hover {
+    color: aquamarine;
+}
+.btn-addcart-container {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-cart {
+    padding: 10px 50px;
+    background-color: white;
+    border: solid 1px grey;
+    font-family: 'BIZ UDPGothic', sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+.btn-cart:hover {
+    background-color: gray;
 }
