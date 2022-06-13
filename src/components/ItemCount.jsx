@@ -13,6 +13,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setCount(count - 1);
         }
     }
+    const addToCart = () => {
+        if(count <= stock) {
+            onAdd(count)
+        } else {
+            console.log('No hay stock');
+        }
+    }
     return (
         <div className='btn-count-container'>
             <div className='btn-count'>
@@ -25,7 +32,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 </button>
             </div>
             <div className='btn-addcart-container'>
-                <button className='btn-cart'>
+                <button onClick={addToCart} className='btn-cart'>
                     Agregar al carrito
                 </button>
             </div>
