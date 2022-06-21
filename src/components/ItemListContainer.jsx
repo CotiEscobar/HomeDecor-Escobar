@@ -1,21 +1,29 @@
 import { useEffect,useState } from 'react';
 import '../styles/itemlistcontainer.css';
-import ItemCount from './ItemCount';
-import ItemList from './Items/ItemList';
-import asyncMock from '../utils/asyncmock';
-import products from '../utils/products';
+import ItemList from './ItemList';
+import { asyncMock, getProductsByCategory } from '../utils/asyncmock';
+import { products } from '../utils/products';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = (props) => {
 
     const [items, setItems] = useState([]);
 
-    useEffect(()=>{
-        asyncMock(2000, products)
-        .then(resultado => setItems(resultado))
+    const {categoryId} = useParams()
+
+    useEffect(() => {
+        if(categoryId) {
+            
+            getProductsByCategory(categoryId)
+            .then(resultado => setItems(resultado))
+         
+        } else {
+
+            asyncMock(2000, products)
+            .then(resultado => setItems(resultado))
+        }
         
     },[items]);
-
-    console.log(items)
 
     if (items.length > 0) {
         return (

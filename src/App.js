@@ -1,17 +1,15 @@
 //import logo from './logo.svg';
 //import './App.css';
 import Header from './components/Header.jsx';
-import ItemDetailContainer from './components/ItemDetailContainer.jsx';
-import ItemListContainer from './components/ItemListContainer.jsx';
+import Main from './components/Main.jsx';
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <>
-    <Header />
-    <ItemListContainer 
-    greeting='Bienvenidos a mi tienda!' />
-    <ItemDetailContainer />
-    </>
+      <BrowserRouter>
+      <Header />
+      <Main />
+      </BrowserRouter>
   );
 }
 

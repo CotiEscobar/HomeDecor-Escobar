@@ -1,26 +1,23 @@
 import { useState, useEffect} from "react";
-import traerProducto from "../utils/traerProducto";
+import { asyncMock2 } from "../utils/asyncmock";
 import ItemDetail from "./ItemDetail";
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
+    
+    const [item, setItem] = useState({});
+
+    const {id} = useParams()
 
     useEffect(()=>{
-        traerProducto()
-            .then((res) => {
-                setProduct(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-        
-    },[]);
+        asyncMock2(parseInt(id))
+            .then(resultado => setItem(resultado))
 
-    console.log(product);
+    },[]);
 
     return (
         <div>
-            <ItemDetail product={product}/>
+            <ItemDetail product={item}/>
         </div>
     )
 }
