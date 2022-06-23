@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ( {stock, initial, onAdd} ) => {
     const [count, setCount] = useState(initial)
 
     const sumCount = () => {
@@ -14,11 +14,7 @@ const ItemCount = ({stock, initial}) => {
         }
     }
     const addToCart = () => {
-        if(count <= stock) {
-            onAdd(count)
-        } else {
-            console.log('No hay stock');
-        }
+        onAdd(count)
     }
     return (
         <div className='btn-count-container'>

@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Item = ( {id, title, description, price, pictureUrl, category} ) => {
-    /*const onAdd = () => {
-        console.log('Agregado al carrito');
-    }*/
 
     return (
         <article key={id} className='item-box' id={category}>

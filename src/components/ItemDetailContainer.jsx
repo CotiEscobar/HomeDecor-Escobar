@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
         asyncMock2(parseInt(id))
             .then(resultado => setItem(resultado))
 
-    },[]);
+    },[item]);
 
     return (
         <div>

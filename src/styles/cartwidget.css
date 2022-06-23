@@ -4,4 +4,6 @@
 .material-symbols-outlined:hover {
     color: gray;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }

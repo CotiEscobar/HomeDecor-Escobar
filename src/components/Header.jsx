@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <header className="header-container">
-            <Link to="/">
-            <h1 className='logo'>HOME.CE</h1>
+            <Link to="/" className='logo'>
+            <h1 className='page-title'>HOME.CE</h1>
             </Link>
             <NavBar 
             inHeader={true}
