@@ -1,11 +1,29 @@
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
 
 const ShoppingCart = () => {
+
+    const {cartItems, clearCart, removeItem} = useContext(CartContext);
+
     return (
         <div>
-            <h5>Shopping Cart</h5>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio delectus placeat culpa optio rerum accusantium sequi sint repellat, tempora labore assumenda blanditiis aut in voluptas, eius consequatur modi est ipsa.</p>
+            <h5>Productos en tu carrito</h5>
+
+            {cartItems.map(item => {
+                return <div>
+                    <hr/>
+                    <h1>{item.title}</h1>
+                    <h4>{item.description}</h4>
+                    <h4>Cantidad: {item.quantity}</h4>
+                    <button onClick={() => removeItem(item.id)}>Eliminar producto</button>
+                    <hr/>
+                    </div>
+            })}
+
             <Link to='/checkout'>Comprar</Link>
+            <button onClick={clearCart}>Limpiar carrito</button>
+
         </div>
     )
 }

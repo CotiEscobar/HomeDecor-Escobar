@@ -8,10 +8,10 @@ import { CartProvider } from './components/CartContext.jsx';
 function App() {
   return (
       <BrowserRouter>
-      <CartProvider>
-      <Header />
-      <Main />
-      </CartProvider>
+        <CartProvider>
+          <Header />
+          <Main />
+        </CartProvider>
       </BrowserRouter>
   );
 }

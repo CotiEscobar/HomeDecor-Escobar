@@ -5,12 +5,13 @@ import { CartContext } from './CartContext';
 
 const CartWidget = () => {
 
-    const {addItemNavBar} = useContext(CartContext);
+    const {cartItems} = useContext(CartContext);
 
     return (
         <Link to='/cart'>
+        <h1>{cartItems.length}</h1>
         <span className='material-symbols-outlined'>
-            shopping_cart {addItemNavBar}
+            shopping_cart 
         </span>
         </Link>
     )
