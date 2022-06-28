@@ -31,7 +31,7 @@ const ItemListContainer = (props) => {
                 <h3 className="greeting">
                     {props.greeting}
                 </h3>
-                <ItemList products = {items}/>
+                <ItemList items={items}/>
             </main>
         )
     } else {

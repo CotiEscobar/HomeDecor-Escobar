@@ -1,18 +1,18 @@
 import Item from './Item';
 
-const ItemList = ( {products} ) => {
+const ItemList = ({ items }) => {
     return (
         <section className='item-list-container'> {
-        products.map(p =>
+        items.map(item =>
         
             <Item 
-            key={p.id}
-            id={p.id}
-            title={p.title}
-            pictureUrl={p.pictureUrl}
-            description={p.description}
-            price={p.price}
-            category={p.category}
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            pictureUrl={item.pictureUrl}
+            description={item.description}
+            price={item.price}
+            category={item.category}
             />
         )}
         </section>
