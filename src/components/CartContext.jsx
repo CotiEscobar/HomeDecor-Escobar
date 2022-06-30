@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { createContext } from 'react';
+import { useState, createContext } from 'react';
 
 export const CartContext = createContext();
 
@@ -8,7 +7,6 @@ const Provider = CartContext.Provider;
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
-    //Agregar un producto al carrito
     const addItem = (product, quantity) => {
         if (isInCart(product.id)) {
             let copia = cartItems.findIndex((copia) => (copia.id === product.id))
@@ -23,7 +21,6 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    // Verifica si el producto ya fue agrgado al carrito
     const isInCart = (id) => {
         return cartItems.some((item) => (item.id === id))
     }
@@ -39,8 +36,31 @@ export const CartProvider = ({ children }) => {
         //}
     }
 
+    const addItemNavBar = () => {
+        let quantity = 0
+        cartItems.forEach((product) => {
+            quantity = quantity + product.quantity
+    })
+        return quantity
+    }
+
+    const getSubtotal = (price, quantity) => {
+        let subtotal = 0
+        subtotal = subtotal + (price * quantity)
+        return Number(subtotal)
+    }
+
+    const getTotal = () => {
+        let total = 0
+        cartItems.forEach((item) => {
+            total = total + (item.quantity * item.price)
+        })
+        return Number(total)
+    }
+
+    
     return (
-        <Provider value={{cartItems, addItem, isInCart, clearCart, removeItem}}>
+        <Provider value={{cartItems, addItem, isInCart, clearCart, removeItem, addItemNavBar, getSubtotal, getTotal}}>
             {children}
         </Provider>
     )
