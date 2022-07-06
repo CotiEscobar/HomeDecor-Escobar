@@ -4,36 +4,63 @@ import ItemList from './ItemList';
 import { asyncMock, getProductsByCategory } from '../utils/asyncmock';
 import { products } from '../utils/products';
 import { useParams } from 'react-router-dom';
+import { db } from '../utils/firebase';
+import { getDocs , collection } from 'firebase/firestore';
 
 const ItemListContainer = (props) => {
 
     const [items, setItems] = useState([]);
 
-    const {categoryId} = useParams()
+    const { categoryId } = useParams();
+
+    
+
 
     useEffect(() => {
-        if(categoryId) {
+
+        const collectionProducts = (collection(db, "products"));
+
+        const consulta = getDocs(collectionProducts);
+
+        consulta
+            .then((resultado)=>{
+                const products_map = resultado.docs.map(referencia => {
+                    //console.log(referencia.id)
+                    //console.log(referencia.data());
+                    const aux = referencia.data();
+                    aux.id = referencia.id;
+                    //console.log(aux)
+                    return aux;
+                })        
+                
+                setItems(products_map);
+
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
+
+        /*if(categoryId) {
             
             getProductsByCategory(categoryId)
             .then(resultado => setItems(resultado))
          
         } else {
 
-            asyncMock(2000, products)
+            asyncMock(500, products)
             .then(resultado => setItems(resultado))
-        }
+        }*/
         
-    },[items]);
+    },[]);
 
     if (items.length > 0) {
         return (
             <main className="main-container">
-                <h3 className="greeting">
-                    {props.greeting}
-                </h3>
                 <ItemList items={items}/>
             </main>
         )
+        }
+    /*
     } else {
         return (
             <main className="main-container">
@@ -43,7 +70,7 @@ const ItemListContainer = (props) => {
                <p>Cargando...</p>
             </main>
         )
-    } 
+    } */
 }
 
 export default ItemListContainer;

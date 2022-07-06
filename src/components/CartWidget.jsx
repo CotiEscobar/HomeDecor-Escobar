@@ -8,12 +8,16 @@ const CartWidget = () => {
     const {cartItems} = useContext(CartContext);
 
     return (
-        <Link to='/cart'>
-        <h1>{cartItems.length}</h1>
-        <span className='material-symbols-outlined'>
-            shopping_cart 
-        </span>
+        <Link to='/cart' className='cart-widget-link'>
+            <div className='cart-widget-container'>
+                <span className='material-symbols-outlined cart'>
+                        shopping_cart 
+                </span>
+                    
+                <p className='quantity-num'>({cartItems.length})</p>
+            </div>
         </Link>
+      
     )
 }
 

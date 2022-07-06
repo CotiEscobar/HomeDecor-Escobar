@@ -2,6 +2,7 @@ import { useState, useEffect} from "react";
 import { asyncMock2 } from "../utils/asyncmock";
 import ItemDetail from "./ItemDetail";
 import { useParams } from 'react-router-dom';
+import { db } from '../utils/firebase';
 
 const ItemDetailContainer = () => {
     

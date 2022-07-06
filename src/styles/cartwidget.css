@@ -1,9 +1,17 @@
-.material-symbols-outlined {
-    margin-left: 50px;
+.cart-widget-container {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+   
 }
-.material-symbols-outlined:hover {
-    color: gray;
-    cursor: pointer;
+.cart-widget-link {
     text-decoration: none;
+}
+.material-symbols-outlined.cart {
+    font-size: 18px;
     color: black;
+}
+.quantity-num {
+    font-size: 14px;
+    text-decoration: none;
 }

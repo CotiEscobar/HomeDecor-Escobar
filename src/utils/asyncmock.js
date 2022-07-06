@@ -1,12 +1,12 @@
 import { products } from "./products";
 
-export const asyncMock = (time, task) => {
+/*export const asyncMock = (time, task) => {
     return new Promise ((resolve) => {
         setTimeout(()=>{
             resolve(task)
         }, time)
     })
-}
+}*/
 
 export const asyncMock2 = (id) => { 
     return new Promise ((resolve) => {

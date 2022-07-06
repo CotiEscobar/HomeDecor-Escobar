@@ -12,7 +12,7 @@ const ShoppingCart = () => {
             {addItemNavBar() === 0 ? (
                 <div className="empty-cart-message-container">
                     <p className="empty-cart-message">OOPS! TU CARRITO ESTA VACIO. POR FAVOR, AGREGÁ ALGÚN PRODUCTO PARA CONTINUAR.</p>
-                    <Link to='/'>Volver al inicio</Link>
+                    <Link to='/' className="comeback-link">volver al inicio</Link>
                 </div>
         
             ) : (
@@ -24,14 +24,16 @@ const ShoppingCart = () => {
                         <div className="product">
                             <img className="product-image" src={item.pictureUrl} alt={item.title} />
                             <p>{item.title}</p>
-                            <p>{item.description}</p>
-                            <p>Cantidad: {item.quantity}</p>
-                            <p>Precio: {item.price}</p>
-                            <p>Subtotal: {getSubtotal(item.price, item.quantity)}</p>
+                            <p>{item.quantity}</p>
+                            <p>{item.price}</p>
+                            <p>{getSubtotal(item.price, item.quantity)}</p>
+                            <span 
+                            className="material-symbols-outlined"
+                            onClick={() => removeItem(item.id)}>delete
+                            </span>
                         </div>
-                    <button onClick={() => removeItem(item.id)}>Eliminar producto</button>
-                    <Link to='/checkout'>Comprar</Link>
-                    <button onClick={clearCart}>Limpiar carrito</button>
+                        <Link to='/checkout'>Comprar</Link>
+                        <button onClick={clearCart}>Limpiar carrito</button>
                     </div>
                     ))}
                     </div>
