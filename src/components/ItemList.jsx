@@ -11,7 +11,7 @@ const ItemList = ({ items }) => {
             title={item.title}
             pictureUrl={item.pictureUrl}
             price={item.price}
-            category={item.category}
+            categoryId={item.categoryId}
             />
         )}
         </section>

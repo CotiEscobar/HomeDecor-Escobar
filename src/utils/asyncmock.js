@@ -6,7 +6,7 @@ import { products } from "./products";
             resolve(task)
         }, time)
     })
-}*/
+}
 
 export const asyncMock2 = (id) => { 
     return new Promise ((resolve) => {
@@ -22,4 +22,4 @@ export const getProductsByCategory = (categoryId) => {
             resolve(products.filter(products => products.categoryId === categoryId));
         }, 500)
     });
-}
+}*/
