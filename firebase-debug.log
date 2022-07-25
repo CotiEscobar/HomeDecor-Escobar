@@ -1,0 +1,32 @@
+[debug] [2022-07-25T20:12:29.768Z] ----------------------------------------------------------------------
+[debug] [2022-07-25T20:12:29.770Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\const\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-07-25T20:12:29.770Z] CLI Version:   11.3.0
+[debug] [2022-07-25T20:12:29.770Z] Platform:      win32
+[debug] [2022-07-25T20:12:29.770Z] Node Version:  v16.14.0
+[debug] [2022-07-25T20:12:29.771Z] Time:          Mon Jul 25 2022 17:12:29 GMT-0300 (hora estándar de Argentina)
+[debug] [2022-07-25T20:12:29.772Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-25T20:12:29.834Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-25T20:12:29.835Z] > authorizing via signed-in user (constanzaescobar15@gmail.com)
+[debug] [2022-07-25T20:12:29.835Z] [iam] checking project home-ce-coder for permissions ["firebase.projects.get"]
+[debug] [2022-07-25T20:12:29.837Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/home-ce-coder:testIamPermissions [none]
+[debug] [2022-07-25T20:12:29.837Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/home-ce-coder:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-07-25T20:12:30.819Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/home-ce-coder:testIamPermissions 200
+[debug] [2022-07-25T20:12:30.819Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/home-ce-coder:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-07-25T20:12:30.820Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/home-ce-coder [none]
+[debug] [2022-07-25T20:12:31.230Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/home-ce-coder 200
+[debug] [2022-07-25T20:12:31.231Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/home-ce-coder {"projectId":"home-ce-coder","projectNumber":"561214029227","displayName":"home-ce-coder","name":"projects/home-ce-coder","resources":{"hostingSite":"home-ce-coder","storageBucket":"home-ce-coder.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6a7c404e-021f-4a41-83e8-ff21471e9c99"}
+[info] 
+[info] === Serving from 'C:\Users\const\OneDrive\Documentos\Coder-React\coder-react'...
+[info] 
+[debug] [2022-07-25T20:12:31.235Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/home-ce-coder/sites 
+[debug] [2022-07-25T20:12:32.556Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/home-ce-coder/sites 200
+[debug] [2022-07-25T20:12:32.556Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/home-ce-coder/sites {"sites":[{"name":"projects/home-ce-coder/sites/home-ce-coder","defaultUrl":"https://home-ce-coder.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-07-25T20:12:32.557Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/home-ce-coder/webApps/-/config [none]
+[debug] [2022-07-25T20:12:33.113Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/home-ce-coder/webApps/-/config 200
+[debug] [2022-07-25T20:12:33.113Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/home-ce-coder/webApps/-/config {"projectId":"home-ce-coder","appId":"1:561214029227:web:fdfd39d6b3212f8f9126ee","storageBucket":"home-ce-coder.appspot.com","locationId":"us-central","apiKey":"AIzaSyB6gMYVU0Aw3DR_mB3JtEw8juTZ_re1xu0","authDomain":"home-ce-coder.firebaseapp.com","messagingSenderId":"561214029227"}
+[info] i  hosting: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [25/Jul/2022:20:12:35 +0000] "GET / HTTP/1.1" 200 2243 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Jul/2022:20:12:35 +0000] \"GET / HTTP/1.1\" 200 2243 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Jul/2022:20:12:35 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Jul/2022:20:12:35 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Jul/2022:20:12:35 +0000] "GET /%PUBLIC_URL%/manifest.json HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Jul/2022:20:12:35 +0000] \"GET /%PUBLIC_URL%/manifest.json HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36\""}}

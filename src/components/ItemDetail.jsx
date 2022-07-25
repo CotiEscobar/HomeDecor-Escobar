@@ -15,7 +15,7 @@ const ItemDetail = ({ product }) => {
         setUnidades(true)
     }
     return (
-        <div>
+        <section>
             <img src={product.pictureUrl} alt={product.title} />
             <h2>{product.title}</h2>
             <p>{product.price}</p>
@@ -32,7 +32,7 @@ const ItemDetail = ({ product }) => {
             onAdd={onAdd}
             />
             }
-        </div>
+        </section>
     )
 }
 

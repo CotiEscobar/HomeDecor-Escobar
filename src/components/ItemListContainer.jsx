@@ -1,8 +1,6 @@
 import { useEffect,useState } from 'react';
 import '../styles/itemlistcontainer.css';
 import ItemList from './ItemList';
-//import { asyncMock, getProductsByCategory } from '../utils/asyncmock';
-//import { products } from '../utils/products';
 import { useParams } from 'react-router-dom';
 import { db } from '../utils/firebase';
 import { getDocs , collection , query , where } from 'firebase/firestore';
@@ -10,19 +8,19 @@ import { getDocs , collection , query , where } from 'firebase/firestore';
 const ItemListContainer = (props) => {
 
     const [items, setItems] = useState([]);
-
     const { categoryId } = useParams();
 
 
     useEffect(() => {
-        //Necesito referencia de la coleccion
-        const collectionProducts = (collection(db, "products"));
+        const collectionProducts = (collection(db, 'products'));
         
-        //Hago la consulta:
-            //consulta filtrada por categorias
-        const filtroDeLaConsulta = query(collectionProducts, where("categoryId", "==", "sillas"));
-            //consulta de todos los docs
-        const consulta = getDocs(collectionProducts);
+
+        const ref = categoryId
+        ? query (collectionProducts, where('categoryId', '==', categoryId))
+        : collectionProducts
+
+
+        const consulta = getDocs(ref);
 
         consulta
             .then((resultado)=>{
@@ -42,17 +40,6 @@ const ItemListContainer = (props) => {
             .catch((error)=>{
                 console.log(error);
             })
-
-        /*if(categoryId) {
-            
-            getProductsByCategory(categoryId)
-            .then(resultado => setItems(resultado))
-         
-        } else {
-
-            asyncMock(500, products)
-            .then(resultado => setItems(resultado))
-        }*/
         
     },[categoryId]);
 
